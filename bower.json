@@ -1,0 +1,15 @@
+{
+  "name": "LGParking",
+  "description": "",
+  "main": "",
+  "authors": [
+    "Marius <marius.kinderis@hotmail.fr>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "datatables.net-dt": "^1.10.12",
+    "datatables.net": "^1.10.12",
+    "datatables.net-bs": "^1.10.12"
+  }
+}

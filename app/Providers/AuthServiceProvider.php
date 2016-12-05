@@ -4,6 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Contracts\Auth\Access\Gate as GateContract;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
+use App\Policies\CudPolicy;
 
 class AuthServiceProvider extends ServiceProvider
 {
@@ -13,8 +14,29 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Model' => 'App\Policies\ModelPolicy',
+        'Illuminate\Database\Eloquent\Model' => 'App\Policies\ModelPolicy',
+        'App\Act' =>  'App\Policies\CudPolicy',
+        'App\Car' =>  'App\Policies\CudPolicy',
+        'App\Contract' =>  'App\Policies\CudPolicy',
+        'App\Owner' =>  'App\Policies\CudPolicy',
+        'App\Ownership' =>  'App\Policies\CudPolicy',
+        'App\Run' =>  'App\Policies\CudPolicy',
+        'App\TechnicalInspection' =>  'App\Policies\CudPolicy',
+        'App\Section' =>  'App\Policies\CudPolicy',
+        'App\Department' =>  'App\Policies\CudPolicy',
+
+        // 'App\Owner' => 'App\Policies\OwnerPolicy',
     ];
+
+    // *
+    //  * The policy mappings for the application.
+    //  *
+    //  * @var array
+     
+    // protected $policies = [
+    //     Cud::class => CudPolicy::class,
+    // ];
+
 
     /**
      * Register any application authentication / authorization services.
@@ -26,6 +48,5 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies($gate);
 
-        //
     }
 }
